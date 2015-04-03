@@ -1,0 +1,36 @@
+{% if pages|length > 1 %}
+<nav>
+    <ul class="pagination">
+        {% if prev_page < 1 %}
+        <li class="disabled">
+            <span>&laquo;</span>
+        </li>
+        {% else %}
+            <li>
+                <a href="{{ path(route, {page: current_page - 1}) }}">
+                    <span>&laquo;</span>
+                </a>
+            </li>
+        {% endif %}
+        
+        {% for page in pages %}
+        <li {% if current_page == page %}class="active"{% endif %}>
+            <a href="{{ path(route, {page: page}) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if next_page > pages|length %}
+        <li class="disabled">
+            <span>&raquo;</span>
+        </li>
+        {% else %}
+            <li>
+                <a href="{{ path(route, {page: next_page}) }}">
+                    <span>&raquo;</span>
+                </a>
+            </li>
+        {% endif %}
+        
+    </ul>
+</nav>
+{% endif %}

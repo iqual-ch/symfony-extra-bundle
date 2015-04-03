@@ -1,0 +1,7 @@
+services:
+    listener.locale:
+        class: SymfonyExtraBundle\EventListener\LocaleListener
+        arguments: ["@se_locale_manager"]
+        scope: request
+        tags:
+            - { name: kernel.event_subscriber }
