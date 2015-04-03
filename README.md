@@ -4,6 +4,18 @@
 composer require mpom/symfony-extra-bundle
 ```
 
+Add to your AppKernel.php:
+```php
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new SymfonyExtraBundle\SymfonyExtraBundle,
+            // ...
+        )
+    }
+```
+
 # Configuration
 
 In your parameters.yml file add 2 new options:
