@@ -5,14 +5,7 @@
         "psr-4": { "SymfonyExtraBundle\\": "" }
     },
     "require": {
-        "symfony/symfony": "2.6.*",
-        "egeloen/ckeditor-bundle": "*",
-        "gedmo/doctrine-extensions": "~2.3@dev",
-        "symfony/assetic-bundle": "~2.3",
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle": "~1.2",
-        "sonata-project/admin-bundle": "~2.3",
-        "sonata-project/doctrine-orm-admin-bundle": "~2.3"
+        "symfony/symfony": "2.6.*"
     },
     "suggest": {
         "tijsverkoyen/css-to-inline-styles": "to use CSS clases in email messages",
