@@ -62,7 +62,7 @@ Requires parameter "mailer_local_dir" to be set.
 #####CssToInline
 Extracts styles external css file into inline styles for every html message,  requires "tijsverkoyen/css-to-inline-styles".  
 
-**Configuration**
+**Configuration**  
 Set option "email_css_file" of section "symfony_extra" of  "config.yml" to valid *.less file.
 
 
