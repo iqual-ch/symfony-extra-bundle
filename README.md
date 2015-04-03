@@ -1,4 +1,4 @@
-# SymfonyExtra
+# SymfonyExtraBundle
 Provides common additions to Symfony.
 
 # Installation
