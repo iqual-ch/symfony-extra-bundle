@@ -50,15 +50,19 @@ Formats string as money appending currency symbol (locale-based).
 ```
 
 ### SwiftMailer
-New transports:  
-* Mandrill (requires installation of "hipaway-travel/mandrill-bundle")  
-* File  
+####Transports:
+
+#####Mandrill
+Requires installation of "hipaway-travel/mandrill-bundle"  
+
+#####File 
+Requires parameter "mailer_local_dir" to be set.  
 
 ####Plugins:
 #####CssToInline
-Extracts styles external css file into inline styles for every html message.
- requires "tijsverkoyen/css-to-inline-styles".  
- **Configuration**
- Set option "email_css_file" of section "symfony_extra" of  "config.yml" to valid *.less file.
+Extracts styles external css file into inline styles for every html message,  requires "tijsverkoyen/css-to-inline-styles".  
+
+**Configuration**
+Set option "email_css_file" of section "symfony_extra" of  "config.yml" to valid *.less file.
 
 
