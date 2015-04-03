@@ -25,7 +25,11 @@ class SymfonyExtraExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('listeners.yml');
-        
+
+        if ($config['email_css_file']) {
+            $container->setParameter('symfony_extra.email_css_file', $config['email_css_file']);
+        }
+
         $container->setParameter('mailer_local_dir', '/dev/null');
     }
 }

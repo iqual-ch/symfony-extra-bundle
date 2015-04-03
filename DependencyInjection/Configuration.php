@@ -19,6 +19,11 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('symfony_extra');
+        $rootNode
+            ->children()
+                ->scalarNode('email_css_file')->cannotBeEmpty()->defaultNull()
+            ->end()
+        ;
         return $treeBuilder;
     }
 }

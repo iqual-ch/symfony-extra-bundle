@@ -59,12 +59,15 @@ class CssToInlinePlugin implements Swift_Events_SendListener
      * @param FilterManager $filterManager
      * @param Kernel $kernel
      */
-    public function __construct(AssetManager $assetManager, FilterManager $filterManager, Kernel $kernel, $cssFile = null)
+    public function __construct(AssetManager $assetManager, FilterManager $filterManager, Kernel $kernel)
     {
         $this->assetManager = $assetManager;
         $this->filterManager = $filterManager;
         $this->kernel = $kernel;
-        $this->cssFile = $cssFile;
+
+        if ($kernel->getContainer()->hasParameter('symfony_extra.email_css_file')) {
+            $this->cssFile = $kernel->getContainer()->getParameter('symfony_extra.email_css_file');
+        }
     }
 
     /**
