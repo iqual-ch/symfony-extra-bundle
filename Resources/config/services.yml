@@ -7,33 +7,27 @@ services:
     swiftmailer.mailer.transport.file:
         class: SymfonyExtraBundle\SwiftmailerExtension\Transport\FileTransport
         arguments: [@swiftmailer.mailer.default.transport.eventdispatcher, %mailer_local_dir%]
-        
+
     swiftmailer.mailer.transport.mandrill:
         class: SymfonyExtraBundle\SwiftmailerExtension\Transport\MandrillTransport
         arguments: [@swiftmailer.mailer.default.transport.eventdispatcher, @kernel]
-        
+
     swiftmailer.mailer.plugin.csstoinline:
         class: SymfonyExtraBundle\SwiftmailerExtension\Plugin\CssToInlinePlugin
         arguments: [@assetic.asset_manager, @assetic.filter_manager, @kernel]
         tags:
             - { name: swiftmailer.default.plugin }
-        
-#    swiftmailer.mailer.plugin.autofromheader:
-#        class: SymfonyExtraBundle\SwiftmailerExtension\Plugin\AutoFromHeaderPlugin
-#        arguments: [%se.project.sender_email%, %se.project.sender_name%]
-#        tags:
-#            - { name: swiftmailer.default.plugin }
-            
+
     se_locale_manager:
         class: %se.locale_manager.class%
         arguments: [%locale%, %locales%, @request]
         scope: request
-        
+
     se.twig.extensions.locale:
         class: %se.twig.extensions.locale.class%
         tags:
             - { name: twig.extension }
-        
+
     se.twig.extensions.paginator:
         class: %se.twig.extensions.paginator.class%
         tags:

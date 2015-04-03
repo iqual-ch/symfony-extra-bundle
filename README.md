@@ -1,3 +1,6 @@
+# SymfontExtra
+Provides database-backed translation management with GUI.
+
 # Installation
 
 ```bash

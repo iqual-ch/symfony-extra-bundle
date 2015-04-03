@@ -15,18 +15,18 @@ use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 /**
  * Plugin merges CSS into inline "style" blocks in html.
  * Gmail does not display styles from <style /> tag.
- * 
+ *
  * How to enable:
  * add the following lines to your service config:
- * 
+ *
  * swiftmailer.mailer.plugin.csstoinline:
  *     class: SymfonyExtraBundle\SwiftmailerExtension\Plugin\CssToInlinePlugin
  *     arguments: [@assetic.asset_manager, @assetic.filter_manager, @kernel]
  *     tags:
  *         - { name: swiftmailer.default.plugin }
- * 
+ *
  * NOTE: swiftmailer.default.plugin <-- default here is a mailer name!
- * 
+ *
  * @author Alex Oleshkevich <alex.oleshkevich@muehlemann-popp.ch>
  * @requires assetic
  * @requires tijsverkoyen/css-to-inline-styles
@@ -53,7 +53,7 @@ class CssToInlinePlugin implements Swift_Events_SendListener
      * @var string
      */
     protected $cssFile;
-    
+
     /**
      * @param AssetManager $assetManager
      * @param FilterManager $filterManager
@@ -75,7 +75,7 @@ class CssToInlinePlugin implements Swift_Events_SendListener
         if (!$this->cssFile) {
             return;
         }
-        
+
         $lessFile = $this->kernel->locateResource($this->cssFile);
         $css = $this->compileLess($lessFile);
 
@@ -91,14 +91,14 @@ class CssToInlinePlugin implements Swift_Events_SendListener
      */
     public function sendPerformed(Swift_Events_SendEvent $evt)
     {
-        
+
     }
 
     /**
      * Compiles less into css.
-     * 
+     *
      * @param string $lessFile Absolute path to LESS file
-     * @return string 
+     * @return string
      */
     protected function compileLess($lessFile)
     {
