@@ -30,6 +30,6 @@ class SymfonyExtraExtension extends Extension
             $container->setParameter('symfony_extra.email_css_file', $config['email_css_file']);
         }
 
-        $container->setParameter('mailer_local_dir', '/dev/null');
+        $container->setParameter('mailer_local_dir', '/tmp');
     }
 }
