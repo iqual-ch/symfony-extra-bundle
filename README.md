@@ -1,4 +1,4 @@
-# SymfonyExtra
+# SymfonyExtraBundle
 Provides common additions to Symfony.
 
 # Installation
@@ -29,10 +29,10 @@ locales: [en, de, it, fr] # all supported locales
 
 # What's inside?
 ### Locale autodetector
-Detects user's locale using different strategies (in this order):
-* Query
-* Cookie
-* Accept Header
+Detects user's locale using different strategies (in this order):  
+* Query  
+* Cookie  
+* Accept Header  
 
 Provides LocaleManger service (@se_locale_manager)
 
@@ -50,15 +50,17 @@ Formats string as money appending currency symbol (locale-based).
 ```
 
 ### SwiftMailer
-New transports:
-* Mandrill (requires installation of "hipaway-travel/mandrill-bundle")
-* File
+####Transports:
 
-Plugins:
-####CssToInline
-Extracts styles external css file into inline styles for every html message.
- requires "tijsverkoyen/css-to-inline-styles".
- **Configuration**
- Set option "email_css_file" of section "symfony_extra" of  "config.yml" to valid *.less file.
+#####Mandrill
+Requires installation of "hipaway-travel/mandrill-bundle"  
+
+#####File 
+Requires parameter "mailer_local_dir" to be set.  
+
+####Plugins:
+#####CssToInline
+Extracts styles external css file into inline styles for every html message,  requires "tijsverkoyen/css-to-inline-styles".  
+Set option "email_css_file" of section "symfony_extra" of  "config.yml" to valid *.less file.
 
 
