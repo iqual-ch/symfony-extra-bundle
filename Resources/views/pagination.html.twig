@@ -1,5 +1,6 @@
 {% if pages|length > 1 %}
 <nav>
+    
     <ul class="pagination">
         {% if prev_page < 1 %}
         <li class="disabled">
@@ -7,7 +8,7 @@
         </li>
         {% else %}
             <li>
-                <a href="{{ path(route, {page: current_page - 1}) }}">
+                <a href="{{ path(route, app.request.query.all|merge({page: current_page - 1})) }}">
                     <span>&laquo;</span>
                 </a>
             </li>
@@ -15,7 +16,7 @@
         
         {% for page in pages %}
         <li {% if current_page == page %}class="active"{% endif %}>
-            <a href="{{ path(route, {page: page}) }}">{{ page }}</a>
+            <a href="{{ path(route, app.request.query.all|merge({page: page})) }}">{{ page }}</a>
         </li>
         {% endfor %}
 
@@ -25,7 +26,7 @@
         </li>
         {% else %}
             <li>
-                <a href="{{ path(route, {page: next_page}) }}">
+                <a href="{{ path(route, app.request.query.all|merge({page: next_page})) }}">
                     <span>&raquo;</span>
                 </a>
             </li>
