@@ -5,7 +5,7 @@
         "psr-4": { "SymfonyExtraBundle\\": "" }
     },
     "require": {
-        "symfony/symfony": "2.6.*"
+        "symfony/symfony": "^2.6 | ^ 3.0"
     },
     "suggest": {
         "tijsverkoyen/css-to-inline-styles": "to use CSS clases in email messages",
