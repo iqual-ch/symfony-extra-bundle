@@ -17,14 +17,17 @@ class LocaleListener implements EventSubscriberInterface
     
     /**
      * @param LocaleManager $localeManager
+     * @param boolean       $forceUsingLocaleManager  Use the locale manager even in CLI env
+     *                                                (e.g. for Unit Tests)
      * @return void
      */
-    public function __construct(LocaleManager $localeManager)
+    public function __construct(LocaleManager $localeManager, $forceUsingLocaleManager = false)
     {
-        if (PHP_SAPI == 'cli') {
+        if (PHP_SAPI == 'cli' && !$forceUsingLocaleManager) {
             // do not manage command line locales
             return;
         }
+
         $this->localeManager = $localeManager;
     }
     
