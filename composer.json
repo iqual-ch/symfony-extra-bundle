@@ -1,5 +1,5 @@
 {
-    "name": "mpom/symfony-extra-bundle",
+    "name": "iqual/symfony-extra-bundle",
     "type": "library",
     "autoload": {
         "psr-4": { "SymfonyExtraBundle\\": "" }
